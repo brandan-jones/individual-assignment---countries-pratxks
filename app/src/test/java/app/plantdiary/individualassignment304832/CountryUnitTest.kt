@@ -7,7 +7,7 @@ import org.junit.Assert.*
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import app.plantdiary.individualassignment304832.dto.Country
-import app.plantdiary.individualassignment304832.service.CountryService
+import app.plantdiary.individualassignment304832.Service.CountryService
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
