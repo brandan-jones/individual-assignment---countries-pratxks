@@ -14,7 +14,9 @@ class MainViewModel: ViewModel() {
     fun fetchCountries() {
         viewModelScope.launch {
             var innerCountry = countryService.fetchCountries()
-            countries.postValue(innerCountry)
+            if (innerCountry != null) {
+                countries.postValue(innerCountry)
+            }
         }
     }
 }
