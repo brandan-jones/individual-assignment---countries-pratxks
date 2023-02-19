@@ -15,10 +15,13 @@ class MainViewModel: ViewModel() {
 
     fun fetchCountries() {
         viewModelScope.launch {
-            var innerCountry = countryService.fetchCountries()
-            if (innerCountry != null) {
-                countries.postValue(innerCountry)
+            val countryList: List<Country>? = countryService.fetchCountries()
+            if (countryList != null) {
+                for (country in countryList) {
+                    countries.postValue(countryList)
+                }
             }
         }
     }
+
 }
