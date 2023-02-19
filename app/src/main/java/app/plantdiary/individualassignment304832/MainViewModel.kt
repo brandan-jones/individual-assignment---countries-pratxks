@@ -11,6 +11,8 @@ class MainViewModel: ViewModel() {
     var countries = MutableLiveData<List<Country>>()
     var countryService : CountryService = CountryService()
 
+    //for test
+
     fun fetchCountries() {
         viewModelScope.launch {
             var innerCountry = countryService.fetchCountries()
