@@ -11,17 +11,13 @@ class MainViewModel: ViewModel() {
     var countries = MutableLiveData<List<Country>>()
     var countryService : CountryService = CountryService()
 
-    //for test
 
     fun fetchCountries() {
         viewModelScope.launch {
-            val countryList: List<Country>? = countryService.fetchCountries()
-            if (countryList != null) {
-                for (country in countryList) {
-                    countries.postValue(countryList)
-                }
-            }
+            var innerCountry = countryService.fetchCountries()
+            countries.postValue(innerCountry)
         }
     }
+
 
 }
